@@ -7,6 +7,7 @@
   <a href="https://huggingface.co/collections/gaotang/multi-branch-transformer"><img src="assets/badges/huggingface.svg" alt="Hugging Face checkpoints" height="22"></a>
   <a href="https://arxiv.org/abs/2611.19800"><img src="assets/badges/arxiv.svg" alt="arXiv paper" height="22"></a>
   <a href="https://arxiv.org/pdf/2611.19800"><img src="assets/badges/pdf.svg" alt="Paper PDF" height="22"></a>
+  <a href="https://x.com/GaotangLi/status/2122718169378730253"><img src="assets/badges/x.svg" alt="X announcement thread" height="22"></a>
 </p>
 
 <p align="center">
