@@ -1,0 +1,33 @@
+{
+  "name": "w4-standard",
+  "description": "Standard ladder reference. Training settings; this file does not contain model weights.",
+  "model": {
+    "scale": "W4",
+    "hidden_size": 1408,
+    "latent_size": 704,
+    "ffn_hidden_size": 704,
+    "family": "standard",
+    "num_layers": 18,
+    "kv_mode": "independent"
+  },
+  "training": {
+    "learning_rate": 0.0005,
+    "train_steps": 75189,
+    "global_batch_size": 256,
+    "sequence_length": 4096,
+    "micro_batch_size": 16,
+    "min_lr_ratio": 0.1,
+    "warmup_fraction": 0.01,
+    "weight_decay": 0.1,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.95,
+    "adam_epsilon": 1e-08,
+    "clip_grad": 1.0,
+    "seed": 1234,
+    "eval_global_batch_size": 128,
+    "eval_micro_batch_size": 2,
+    "eval_steps": 95,
+    "checkpoint_fraction": 0.1,
+    "keep_last_checkpoints": 1
+  }
+}

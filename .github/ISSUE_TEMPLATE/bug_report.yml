@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a reproducible model, training or environment problem.
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and revision
+      description: Git revision, GPU, Python/PyTorch/CUDA/Transformer Engine versions, and DP/EP layout.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Configuration and command; use synthetic inputs when possible. Remove credentials, account names and private paths.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected and observed behavior
+      description: Include the first error and a short relevant log excerpt, not a checkpoint or dataset.
+    validations:
+      required: true

@@ -1,0 +1,15 @@
+{
+  "train": [
+    {
+      "weight": 1.0,
+      "prefix": "/scratch/your-data/corpus/train_text_document"
+    }
+  ],
+  "validation": [
+    {
+      "weight": 1.0,
+      "prefix": "/scratch/your-data/corpus/validation_text_document"
+    }
+  ],
+  "tokenizer_model": "/scratch/your-data/tokenizer/tokenizer.model"
+}

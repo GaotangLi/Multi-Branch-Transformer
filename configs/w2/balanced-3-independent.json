@@ -1,0 +1,42 @@
+{
+  "name": "w2-balanced-3-independent",
+  "description": "Balanced branch-count allocation; the Independent and Joint variants share the same data/optimizer horizon.",
+  "model": {
+    "scale": "W2",
+    "hidden_size": 1152,
+    "latent_size": 576,
+    "ffn_hidden_size": 576,
+    "family": "balanced",
+    "prelude": 3,
+    "branches": [
+      5,
+      5,
+      5
+    ],
+    "coda": 4,
+    "branch_hidden_size": 768,
+    "branch_latent_size": 352,
+    "branch_ffn_hidden_size": 352,
+    "kv_mode": "independent"
+  },
+  "training": {
+    "learning_rate": 0.0007,
+    "train_steps": 78370,
+    "global_batch_size": 128,
+    "sequence_length": 4096,
+    "micro_batch_size": 16,
+    "min_lr_ratio": 0.1,
+    "warmup_fraction": 0.01,
+    "weight_decay": 0.1,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.95,
+    "adam_epsilon": 1e-08,
+    "clip_grad": 1.0,
+    "seed": 1234,
+    "eval_global_batch_size": 128,
+    "eval_micro_batch_size": 2,
+    "eval_steps": 95,
+    "checkpoint_fraction": 0.1,
+    "keep_last_checkpoints": 1
+  }
+}

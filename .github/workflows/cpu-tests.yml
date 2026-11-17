@@ -1,0 +1,21 @@
+name: CPU checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts-and-model-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e '.[test]'
+      - name: Model graph, gradients, recipes and training contracts
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -m pytest -q tests

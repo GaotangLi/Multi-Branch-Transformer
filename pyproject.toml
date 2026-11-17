@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-branch-transformer"
+version = "0.2.0"
+description = "Multi-branch Transformer: native MoE pretraining with independent or Joint-KV branches"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "BSD-3-Clause"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "Multi-branch Transformer contributors"}]
+dependencies = ["PyYAML>=6.0.2,<7"]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5"]
+train = [
+  "numpy>=1.26", "packaging>=24", "einops>=0.8", "tqdm>=4.66",
+  "psutil>=5.9", "pybind11>=2.13", "six>=1.16", "tensorboard>=2.18",
+  "tiktoken>=0.8", "transformers>=4.48", "omegaconf>=2.3",
+]
+wandb = ["wandb>=0.19"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["code"]
+addopts = "-ra"
+markers = ["gpu: requires an explicitly allocated CUDA GPU and the training environment"]
+

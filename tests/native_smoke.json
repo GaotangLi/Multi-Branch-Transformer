@@ -1,0 +1,33 @@
+{
+  "name": "tiny-joint-native-smoke",
+  "description": "Native mechanics only: real attention, quantile-balanced LatentMoE, and Joint-KV; not a paper model.",
+  "model": {
+    "scale": "W1",
+    "family": "balanced",
+    "hidden_size": 256,
+    "latent_size": 128,
+    "ffn_hidden_size": 128,
+    "prelude": 1,
+    "branches": [
+      1,
+      1
+    ],
+    "coda": 1,
+    "branch_hidden_size": 128,
+    "branch_latent_size": 64,
+    "branch_ffn_hidden_size": 64,
+    "kv_mode": "joint"
+  },
+  "training": {
+    "learning_rate": 0.0007,
+    "train_steps": 4,
+    "global_batch_size": 1,
+    "micro_batch_size": 1,
+    "sequence_length": 128,
+    "eval_global_batch_size": 1,
+    "eval_micro_batch_size": 1,
+    "eval_steps": 1,
+    "checkpoint_fraction": 0.5,
+    "keep_last_checkpoints": 2
+  }
+}
