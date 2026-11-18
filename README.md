@@ -159,6 +159,13 @@ code/
 configs/
   w1/ … w4/             Standard and MBT training recipes
   data.example.json     Portable dataset/tokenizer configuration
+inference/
+  nano-vllm/
+    nanovllm/           Engine: paged KV cache, FA3/FA4 attention, Triton MoE, CUDA-graph decode
+    benchmarks/mbt/     Fixed-concurrency throughput benchmark with a serial/batched parity check
+    tools/              Native bundle conversion, demo export, and prompt manifests
+    tests/              CPU engine and export tests
+    README.md           Code map, benchmark protocol, and published-weight conversion
 scripts/
   train.sh              torchrun launcher
   check_native.sh       Single-GPU correctness check
