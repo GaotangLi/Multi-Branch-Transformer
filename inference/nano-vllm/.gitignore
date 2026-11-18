@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.idx
+*.log
+*-torch-trace.json
+/runs/
+/.cache/
+/exports/
