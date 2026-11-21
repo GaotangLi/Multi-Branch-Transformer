@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mbt-serving"
+version = "0.2.0"
+authors = [{ name = "Multi-branch Transformer contributors" }]
+# Derived from nano-vLLM by Xingkai Yu; see LICENSE and README.
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+description = "Nano-vLLM-based single-GPU inference for multi-branch Transformers with shared KV caches"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "torch>=2.4.0",
+    "triton>=3.0.0",
+    "numpy",
+    "safetensors",
+]
+
+[project.optional-dependencies]
+wide = [
+    "torch>=2.12.0", "triton>=3.7.0", "numpy", "safetensors",
+    "flash-attn-4>=4.0.0b11", "sglang-kernel", "flashinfer-python",
+]
+test = ["pytest"]
+# One test compares RMSNorm and RoPE against Transformer Engine; it skips without it.
+parity = ["transformer-engine"]
+upstream = [
+    "transformers>=4.51.0",
+    "flash-attn",
+    "xxhash",
+]
+
+[project.urls]
+Homepage = "https://github.com/GaotangLi/Multi-Branch-Transformer"
+Upstream = "https://github.com/GeeeekExplorer/nano-vllm"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nanovllm*"]
